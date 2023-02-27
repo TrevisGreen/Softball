@@ -1,0 +1,18 @@
+$maroon: #A02B22;
+$gold: #AA9870;
+$white: #FFFFFF;
+$black: #222;
+
+@mixin transition($options) {
+    -webkit-transition: $options;
+    -moz-transition: $options;
+    -ms-transition: $options;
+    -o-transition: $options;
+    transition: $options;
+}
+
+body {
+    padding-top: 60px;
+    //font: 16px/1.5em "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
