@@ -1,4 +1,8 @@
 package com.sofball.demo.dao;
 
-public interface DivisionRepository {
+import com.sofball.demo.model.Division;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+public interface DivisionRepository extends PagingAndSortingRepository<Division, Integer> {
+
 }
