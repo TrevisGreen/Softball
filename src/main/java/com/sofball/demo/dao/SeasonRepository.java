@@ -1,4 +1,8 @@
 package com.sofball.demo.dao;
 
-public interface SeasonRepository {
+import com.sofball.demo.model.Season;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+public interface SeasonRepository extends PagingAndSortingRepository<Season, Integer> {
+
 }
