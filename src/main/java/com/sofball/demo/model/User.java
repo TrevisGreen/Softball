@@ -99,7 +99,7 @@ public class User implements Serializable, UserDetails {
     }
 
     @Override
-    public Collection<? extends GrantedAuthority> grantedAuthorities() {
+    public Collection<? extends GrantedAuthority> getAuthorities() {
         Set<GrantedAuthority> authorities = new LinkedHashSet<>();
         authorities.addAll(getRoles());
         return authorities;
@@ -213,7 +213,7 @@ public class User implements Serializable, UserDetails {
         this.enabled = enabled;
     }
 
-    public Boolean getPasswordExpired() {
+    public Boolean isPasswordExpired() {
         return passwordExpired;
     }
 
