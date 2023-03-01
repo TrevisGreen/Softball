@@ -47,7 +47,7 @@ public abstract class BaseController {
         params.put(Constants.DIRECTION, direction);
         params.put(Constants.OPPOSITE_DIRECTION, opposite);
         params.put(Constants.FILTER, filter);
-        PageRequest pageRequest = new PageRequest(page, 20, s);
+        PageRequest pageRequest = new PageRequest(page,20, s);
         params.put(Constants.PAGE_REQUEST, pageRequest);
         return params;
     }

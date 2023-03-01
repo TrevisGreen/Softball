@@ -20,7 +20,7 @@ public class Role implements Serializable, GrantedAuthority {
     private String authority;
 
     // default constructor
-    public Role(){
+    public Role() {
     }
 
     // Getters and Setters

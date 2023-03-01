@@ -1,9 +1,11 @@
 package com.sofball.demo.config;
 
 
+import com.sofball.demo.utils.LoginHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDecisionVoter;
 import org.springframework.security.access.hierarchicalroles.RoleHierarchy;
@@ -13,9 +15,11 @@ import org.springframework.security.access.vote.AffirmativeBased;
 import org.springframework.security.access.vote.RoleHierarchyVoter;
 import org.springframework.security.access.vote.RoleVoter;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.authorization.AuthorizationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
+;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -27,6 +31,7 @@ import org.springframework.security.web.access.expression.WebExpressionVoter;
 import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Configuration
 @EnableWebMvcSecurity
@@ -102,6 +107,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new RoleHierarchyVoter(roleHierarchy());
     }
 
+
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider() {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
@@ -122,4 +128,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         AccessDecisionManager result = new AffirmativeBased(voters);
         return result;
     }
+
+
 }
