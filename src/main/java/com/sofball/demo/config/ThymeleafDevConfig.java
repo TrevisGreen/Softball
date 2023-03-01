@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
+import org.thymeleaf.templateresolver.TemplateResolver;
 
 @Configuration
 @Profile(Constants.SPRING_PROFILE_DEVELOPMENT)
@@ -23,7 +24,7 @@ public class ThymeleafDevConfig {
     @Bean
     public ITemplateResolver defaultTemplateResolver() {
         log.info("Setting Thymeleaf Resolver Cache to {}", cache);
-        ITemplateResolver resolver = new ServletContextTemplateResolver();
+        TemplateResolver resolver = new ServletContextTemplateResolver();
         resolver.setPrefix("/WEB-INF/views/");
         resolver.setSuffix(".html");
         resolver.setTemplateMode("HTML5");
